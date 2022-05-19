@@ -18,14 +18,14 @@ private:
     Node* root;
     Node* addNode(Node*, T);
     int   searchNode(Node*, T);
-    int   heightTree(Node*);
+    int   depthTree(Node*);
 public:
     BST();
     ~BST();
     void add(T);
     int  search(T);
     int depth();
-
+    
 };
 template<typename T>
 BST<T>::BST() :root(nullptr) {}
@@ -77,21 +77,21 @@ int BST<T>::search(T value)
     return searchNode(root, value);
 }
 template<typename T>
-int BST<T>::heightTree(Node* root) {
+int BST<T>::depthTree(Node* root) {
     if (root == nullptr)
         return 0;
     if (root->left == nullptr && root->right == nullptr)
         return 0;
-    int left = heightTree(root->left);
-    int right = heightTree(root->right);
-    if (left < right)
-        return right + 1;
-    else
+    int left = depthTree(root->left);
+    int right = depthTree(root->right);
+    if (left > right)
         return left + 1;
+    else
+        return right + 1;
 }
 
 template<typename T>
 int BST<T>::depth() {
-    return heightTree(root);
+    return depthTree(root);
 }
 #endif  // INCLUDE_BST_H_
