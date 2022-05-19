@@ -80,6 +80,8 @@ template<typename T>
 int BST<T>::heightTree(Node* root) {
     if (root == nullptr)
         return 0;
+    if (root->left == nullptr && root->right == nullptr)
+        return 0;
     int left = heightTree(root->left);
     int right = heightTree(root->right);
     if (left < right)
