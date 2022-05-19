@@ -1,15 +1,13 @@
 // Copyright 2021 NNTU-CS
-#ifndef INCLUDE_BST_H_
-#define INCLUDE_BST_H_
 #include <iostream>
 
 template<typename T>
 class BST
 {
 public:
-    struct Node
-    {
-        T value;
+struct Node
+{
+T value;
         int count;
         Node* left;
         Node* right;
