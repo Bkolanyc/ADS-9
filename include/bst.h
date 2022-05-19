@@ -24,7 +24,7 @@ public:
     ~BST();
     void add(T);
     int  search(T);
-    int height();
+    int depth();
 
 };
 template<typename T>
@@ -89,7 +89,7 @@ int BST<T>::heightTree(Node* root) {
 }
 
 template<typename T>
-int BST<T>::height() {
+int BST<T>::depth() {
     return heightTree(root);
 }
 #endif  // INCLUDE_BST_H_
