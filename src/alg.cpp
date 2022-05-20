@@ -1,9 +1,9 @@
 // Copyright 2021 NNTU-CS
 #include <iostream>
-#include  <locale>
-#include  <cstdlib>
-#include "bst.h"
+#include <locale>
+#include <cstdlib>
 #include <fstream>
+#include "bst.h"
 
 BST<std::string> makeTree(const char* filename) {
         std::ifstream file;
@@ -26,8 +26,9 @@ BST<std::string> makeTree(const char* filename) {
                         if (k != 0) {
                                 TREE.add(line);
                                 line = "";
-                        } else
+                        } else {
                                 i++;
+                        }
                 }
         }
         return TREE;
