@@ -6,7 +6,7 @@ using namespace std;
 #include "bst.h"
 #include <fstream>
 
-BST<std::string> makeTree(char* filename)
+BST<std::string> makeTree(const char* filename)
 {
         ifstream file;
 	file.open(filename);
